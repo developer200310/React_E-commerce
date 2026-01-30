@@ -40,7 +40,7 @@ function Tracking() {
                         <div className="progress-bar"></div>
                     </div>
                 </div>
-            </div></div>
+            </div>            </div>
     )
 }
 

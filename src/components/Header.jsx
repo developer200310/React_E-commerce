@@ -11,10 +11,9 @@ function Header() {
         <div className="header">
             <div className="left-section">
                 <Link to="/" className="header-link">
-                    <img className="logo"
-                        src="/public/images/logo-white.png" />
-                    <img className="mobile-logo"
-                        src="/public/images/mobile-logo-white.png" />
+                  
+                   <img className="logo-icon" src="/public/images/hajarshop-logo.png" />
+                   
                 </Link>
             </div>
 
@@ -27,6 +26,9 @@ function Header() {
             </div>
             <div className='right-section'>
                 <Link to="/" className='header-link orders-link'>Home</Link>
+            </div>
+            <div className='right-section'>
+                <Link to="/tracking" className="header-link orders-link">Tracking</Link>
             </div>
 
             <div className="right-section">

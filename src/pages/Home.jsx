@@ -1,37 +1,11 @@
 import React, { useContext, useState } from 'react'
 import { CartContext } from '../context/CartContext.jsx'
 import '../styles/pages/index.css';
-
+import { products } from '../data/products.js';
 function Home() {
     const { addToCart } = useContext(CartContext)
     const [addedItemId, setAddedItemId] = useState(null)
 
-    const products = [
-        {
-            id: 1,
-            name: 'Black and Gray Athletic Cotton Socks - 6 Pairs',
-            price: 10.90,
-            image: '/public/images/products/athletic-cotton-socks-6-pairs.jpg',
-            rating: '/public/images/ratings/rating-45.png',
-            reviews: 87
-        },
-        {
-            id: 2,
-            name: 'Intermediate Size Basketball',
-            price: 20.95,
-            image: '/public/images/products/intermediate-composite-basketball.jpg',
-            rating: '/public/images/ratings/rating-40.png',
-            reviews: 127
-        },
-        {
-            id: 3,
-            name: 'Adults Plain Cotton T-Shirt - 2 Pack',
-            price: 7.99,
-            image: '/public/images/products/adults-plain-cotton-tshirt-2-pack-teal.jpg',
-            rating: '/public/images/ratings/rating-45.png',
-            reviews: 56
-        }
-    ]
 
     const handleAddToCart = (product, quantity) => {
         addToCart({
@@ -67,7 +41,7 @@ function ProductCard({ product, onAddToCart, isAdded }) {
         <div className="product-container">
             <div className="product-image-container">
                 <img className="product-image"
-                    src={product.image} />
+                    src={`/public/${product.image}`} />
             </div>
 
             <div className="product-name limit-text-to-2-lines">
@@ -76,14 +50,14 @@ function ProductCard({ product, onAddToCart, isAdded }) {
 
             <div className="product-rating-container">
                 <img className="product-rating-stars"
-                    src={product.rating} />
+                    src={`/public/images/ratings/rating-${product.rating.stars * 10}.png`} />
                 <div className="product-rating-count link-primary">
-                    {product.reviews}
+                    {product.rating.count}
                 </div>
             </div>
 
             <div className="product-price">
-                ${product.price.toFixed(2)}
+                ${(product.priceCents / 100).toFixed(2)}
             </div>
 
             <div className="product-quantity-container">

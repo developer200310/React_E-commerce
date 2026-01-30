@@ -12,11 +12,16 @@
   top: 0;
   left: 0;
   right: 0;
-  height: 60px;
+  height: 90px;
+  
 }
 
 .header .left-section {
-  width: 208px;
+  display: flex;
+  justify-content:space-between;
+}
+.logo-icon{
+    height:90px;
 }
 
 @media (max-width: 800px) {
@@ -38,10 +43,7 @@
   border: 1px solid white;
 }
 
-.header .logo {
-  height: 26px;
-  margin-top: 1px;
-}
+
 
 .header .mobile-logo {
   display: none;
